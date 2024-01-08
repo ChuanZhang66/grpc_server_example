@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package profile.api;
+
+service Profile{
+  rpc UserInfo(UserInfoRequest) returns (UserInfoResponse) {};
+  rpc BatchUserInfo(BatchUserInfoRequest) returns (BatchUserInfoResponse) {};
+  rpc ActivateUser(ActivateUserRequest) returns (ActivateUserResponse) {};
+  rpc BatchFollowStatus(BatchFollowStatusRequest) returns (BatchFollowStatusResponse) {};
+}
+
+message UserInfoResponse{
+  int64 user_id = 1;
+  string username = 2;
+}
+
+message UserInfoRequest{
+  optional int64 user_id = 1;
+  optional string username = 2;
+}
+
+message ActivateUserResponse{
+   string result = 1;
+   string message = 2;
+}
+
+message ActivateUserRequest{
+   string username = 1;
+   string event_id = 2;
+}
+
+message BatchUserInfoRequest{
+    string request = 1;
+}
+
+message BatchUserInfoResponse{
+    string response = 1;
+}
+
+message BatchFollowStatusRequest{
+    string request = 1;
+}
+
+message BatchFollowStatusResponse{
+    string response = 1;
+}
