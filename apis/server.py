@@ -7,30 +7,19 @@ from apis import apis_rs_pb2 as apis_pb2
 from apis import apis_rs_pb2_grpc as apis_pb2_grpc
 
 
-class ProfileServicer(apis_pb2_grpc.ProfileServicer):
-    def UserInfo(self, request, context):
-        response = apis_pb2.UserInfoResponse(user_id=1, username=2)
+class TestServicer(apis_pb2_grpc.TestServiceServicer):
+    def TestFunc(self, request, context):
+        response = apis_pb2.TestFuncResponse(id=1, name="2")
         return response
 
-    def BatchUserInfo(self, request, context):
-        response = apis_pb2.BatchUserInfoResponse
-        return response(response=json.dumps({}))
-
-    def BatchFollowStatus(self, request, context):
-        response = apis_pb2.BatchFollowStatusResponse
-        return response(response=json.dumps({}))
-
-    def ActivateUser(self, request, context):
-        Response = apis_pb2.ActivateUserResponse
-        return Response(result="f", message="")
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    apis_pb2_grpc.add_ProfileServicer_to_server(ProfileServicer(), server)
-    server.add_insecure_port('[::]:50056')
+    apis_pb2_grpc.add_TestServiceServicer_to_server(TestServicer(), server)
+    server.add_insecure_port('[::]:50051')
     server.start()
     try:
         while True:

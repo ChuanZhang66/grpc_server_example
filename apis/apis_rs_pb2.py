@@ -13,29 +13,17 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61pis/apis_rs.proto\x12\x0bprofile.api\"5\n\x10UserInfoResponse\x12\x0f\n\x07user_id\x18\x01 \x01(\x03\x12\x10\n\x08username\x18\x02 \x01(\t\"W\n\x0fUserInfoRequest\x12\x14\n\x07user_id\x18\x01 \x01(\x03H\x00\x88\x01\x01\x12\x15\n\x08username\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\n\n\x08_user_idB\x0b\n\t_username\"7\n\x14\x41\x63tivateUserResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"9\n\x13\x41\x63tivateUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\t\"\'\n\x14\x42\x61tchUserInfoRequest\x12\x0f\n\x07request\x18\x01 \x01(\t\")\n\x15\x42\x61tchUserInfoResponse\x12\x10\n\x08response\x18\x01 \x01(\t\"+\n\x18\x42\x61tchFollowStatusRequest\x12\x0f\n\x07request\x18\x01 \x01(\t\"-\n\x19\x42\x61tchFollowStatusResponse\x12\x10\n\x08response\x18\x01 \x01(\t2\xeb\x02\n\x07Profile\x12I\n\x08UserInfo\x12\x1c.profile.api.UserInfoRequest\x1a\x1d.profile.api.UserInfoResponse\"\x00\x12X\n\rBatchUserInfo\x12!.profile.api.BatchUserInfoRequest\x1a\".profile.api.BatchUserInfoResponse\"\x00\x12U\n\x0c\x41\x63tivateUser\x12 .profile.api.ActivateUserRequest\x1a!.profile.api.ActivateUserResponse\"\x00\x12\x64\n\x11\x42\x61tchFollowStatus\x12%.profile.api.BatchFollowStatusRequest\x1a&.profile.api.BatchFollowStatusResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61pis/apis_rs.proto\x12\x10test_service.api\",\n\x10TestFuncResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"E\n\x0fTestFuncRequest\x12\x0f\n\x02id\x18\x01 \x01(\x03H\x00\x88\x01\x01\x12\x11\n\x04name\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x05\n\x03_idB\x07\n\x05_name2b\n\x0bTestService\x12S\n\x08TestFunc\x12!.test_service.api.TestFuncRequest\x1a\".test_service.api.TestFuncResponse\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'apis.apis_rs_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _USERINFORESPONSE._serialized_start=35
-  _USERINFORESPONSE._serialized_end=88
-  _USERINFOREQUEST._serialized_start=90
-  _USERINFOREQUEST._serialized_end=177
-  _ACTIVATEUSERRESPONSE._serialized_start=179
-  _ACTIVATEUSERRESPONSE._serialized_end=234
-  _ACTIVATEUSERREQUEST._serialized_start=236
-  _ACTIVATEUSERREQUEST._serialized_end=293
-  _BATCHUSERINFOREQUEST._serialized_start=295
-  _BATCHUSERINFOREQUEST._serialized_end=334
-  _BATCHUSERINFORESPONSE._serialized_start=336
-  _BATCHUSERINFORESPONSE._serialized_end=377
-  _BATCHFOLLOWSTATUSREQUEST._serialized_start=379
-  _BATCHFOLLOWSTATUSREQUEST._serialized_end=422
-  _BATCHFOLLOWSTATUSRESPONSE._serialized_start=424
-  _BATCHFOLLOWSTATUSRESPONSE._serialized_end=469
-  _PROFILE._serialized_start=472
-  _PROFILE._serialized_end=835
+  _TESTFUNCRESPONSE._serialized_start=40
+  _TESTFUNCRESPONSE._serialized_end=84
+  _TESTFUNCREQUEST._serialized_start=86
+  _TESTFUNCREQUEST._serialized_end=155
+  _TESTSERVICE._serialized_start=157
+  _TESTSERVICE._serialized_end=255
 # @@protoc_insertion_point(module_scope)
