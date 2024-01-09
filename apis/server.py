@@ -1,7 +1,7 @@
-import json
 import time
-import grpc
 from concurrent import futures
+
+import grpc
 
 from apis import apis_rs_pb2 as apis_pb2
 from apis import apis_rs_pb2_grpc as apis_pb2_grpc
@@ -9,7 +9,8 @@ from apis import apis_rs_pb2_grpc as apis_pb2_grpc
 
 class TestServicer(apis_pb2_grpc.TestServiceServicer):
     def TestFunc(self, request, context):
-        response = apis_pb2.TestFuncResponse(id=1, name="2")
+        request = getattr(apis_pb2, "TestFuncRequest")(id=1, name="2")
+        response = getattr(apis_pb2, "TestFuncResponse")(id=request.id, name=request.name)
         return response
 
 
